@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+   
+*@
+@{
+
+}
+
+<form method="post">
+    <fieldset>
+        <div align="center">
+            <legend>Acceso</legend>
+            <div>
+                <input type="text" name="CodEmpleado" id="CodEmpleado" class="input" placeholder="Codigo de empleado" minlength="1" />
+            </div>
+            <br />
+            <div>
+                <input type="password" name="ClaveEmpleado" id="ClaveEmpleado" class="input" placeholder="Clave de empleado" minlength="1" />
+            </div>
+            <br />
+            <div>
+
+                <button type="submit" class="submit"> >> </button>
+            </div>
+            <br />
+            <p class="text-info">@ViewBag.SesionIniciada</p>
+            <p class="text-danger">@ViewBag.ErrorSesion</p>
+            <div>
+                @Html.ActionLink("Registro","Register")
+            </div>
+               
+        </div>
+
+
+
+    </fieldset>
+</form>
