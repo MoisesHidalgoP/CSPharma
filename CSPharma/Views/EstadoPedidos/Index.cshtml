@@ -1,0 +1,77 @@
+﻿@model IEnumerable<DAL.Modelo.TdcTchEstadoPedido>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de pedidos</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo pedido</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MdUuid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEstadoDevolucionNavigation.CodEstadoDevolucion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEstadoEnvioNavigation.CodEstadoEnvio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEstadoPagoNavigation.CodEstadoPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodLineaNavigation.CodLinea)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdUuid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodPedido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoDevolucionNavigation.CodEstadoDevolucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoEnvioNavigation.CodEstadoEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoPagoNavigation.CodEstadoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodLineaNavigation.CodLinea)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles del pedido</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+            </td>
+                
+        </tr>
+        }
+        
+    </tbody>
+   
+</table>
+

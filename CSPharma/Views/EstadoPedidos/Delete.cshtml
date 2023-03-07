@@ -1,0 +1,63 @@
+﻿@model DAL.Modelo.TdcTchEstadoPedido
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar pedido</h1>
+
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdUuid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdUuid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodPedido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodPedido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodEstadoDevolucionNavigation.CodEstadoDevolucion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodEstadoDevolucionNavigation.CodEstadoDevolucion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodEstadoEnvioNavigation.CodEstadoEnvio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodEstadoEnvioNavigation.CodEstadoEnvio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodEstadoPagoNavigation.CodEstadoPago)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodEstadoPagoNavigation.CodEstadoPago)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodLineaNavigation.CodLinea)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodLineaNavigation.CodLinea)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver</a>
+    </form>
+</div>

@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<cspharma_informacionalContext>(
+builder.Services.AddDbContext<CspharmaInformacionalContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("EFCConexion"))
     );
 builder.Services.AddSession(options =>
@@ -24,10 +24,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 

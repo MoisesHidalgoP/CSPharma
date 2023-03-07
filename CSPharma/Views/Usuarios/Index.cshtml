@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DAL.Modelo.DlkCatAccEmpleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de empleados</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo usuario</a>
+</p>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MdUuid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaveEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NivelAccesoEmpleadoNavigation.NivelAccesoEmpleado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdUuid)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodEmpleado)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelAccesoEmpleadoNavigation.Descripcion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodEmpleado">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.CodEmpleado">Detalles del Empleado</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodEmpleado">Borrar</a>
+            </td>
+                
+        </tr>
+        }
+       
+    </tbody>
+
+</table>
+
